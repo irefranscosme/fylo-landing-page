@@ -4,8 +4,6 @@
     align-items: $align;
 }
 
-@mixin grid($justify, $align) {
+@mixin grid() {
     display: grid;
-    justify-items: $justify;
-    align-content: $align;
 }

@@ -11,7 +11,7 @@
   * {
     margin: 0;
     padding: 0;
-    font: inherit
+    font: inherit;
   }
   /*
     3. Allow percentage-based heights in the application
@@ -46,4 +46,10 @@
   */
   #root, #__next {
     isolation: isolate;
+  }
+
+  li ,
+  a {
+    text-decoration: none;
+    list-style: none;
   }
