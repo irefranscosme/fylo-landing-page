@@ -1,0 +1,16 @@
+// function for maps
+@function primary($primary-color){
+    @return map-get($map: $primary, $key: $primary-color)
+};
+@function accent($accent-color){
+    @return map-get($map: $accent, $key: $accent-color)
+};
+@function neutral($neutral-color){
+    @return map-get($map: $neutral, $key: $neutral-color)
+};
+@function font-size($font-size){
+    @return map-get($map: $font-sizes, $key: $font-size)
+};
+@function font-weight($font-weight){
+    @return map-get($map: $font-weights, $key: $font-weight)
+};
