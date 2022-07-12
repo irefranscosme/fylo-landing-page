@@ -1,3 +1,202 @@
-body {
-    background-color: blanchedalmond;
+@import './sass/reset', './sass/maps', './sass/functions', './sass/variables' , './sass/classes', './sass/mixins';
+
+// root
+:root {
+    --primary-400: #{primary(primary-400)};
+    --primary-300: #{primary(primary-300)};
+    --primary-200: #{primary(primary-200)};
+    --primary-100: #{primary(primary-100)};
+    
+    --accent-400: #{accent(accent-400)};
+    --accent-300: #{accent(accent-300)};
+    --accent-200: #{accent(accent-200)};
+    --accent-100: #{accent(accent-100)};
+    
+    --neutral-400: #{neutral(neutral-400)};
+    --neutral-300: #{neutral(neutral-300)};
+    --neutral-200: #{neutral(neutral-200)};
+    --neutral-100: #{neutral(neutral-100)};
+
+    --ff-primary: #{$ff-primary};
+    --ff-secondary: #{$ff-secondary};
+
+    --fs-900: #{font-size(fs-900)};
+    --fs-700: #{font-size(fs-700)};
+    --fs-600: #{font-size(fs-600)};
+    --fs-500: #{font-size(fs-500)};
+    --fs-400: #{font-size(fs-400)};
+    --fs-300: #{font-size(fs-300)};
+
+    --fw-700: #{font-weight(fs-700)};
+    --fw-400: #{font-weight(fs-400)};
 }
+
+body {
+    background-color: var(--neutral-100);
+    .container {
+        @include grid();
+    }
+
+    .nav,
+    .header{
+        padding: 1.5rem;
+    }
+}
+
+.nav {
+    @include flex(space-between, center);
+    width: 100%;
+    .nav-img {
+        flex-basis: 50%;
+        img {
+            max-width: var(--fs-900);
+        }
+    }
+    .nav-list {
+        flex-basis: 50%;
+        @include flex(space-between, center);
+    }
+}
+
+.header {
+    .header-bg {
+        padding-top: 15%;
+        width: 80%;
+        margin: 0 auto;
+    }
+    article {
+        text-align: center;
+        h1 {
+            padding-top: 12%;
+        }
+        p {
+            padding-top: 5%;
+            line-height: 1.7;
+            
+        }
+    }
+}
+
+.header-input {
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 8%;
+    input,
+    button {
+        padding-block: 0.6rem;
+        border-radius: 5px;
+    }
+    input {
+        margin: 0 auto;
+        width: 100%;
+        padding-left: 1rem;
+        border: 1px solid var(--primary-200);
+        &::placeholder {
+            font-size: calc(var(--fs-400) - 1px);
+            font-family: var(--ff-secondary);
+            color: var(--neutral-200);
+        }
+    }
+ 
+    button {
+        display: block;
+        margin: 1rem auto;
+        width: 100%;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+    }
+}
+
+.uplift {
+    padding-top: 10%;
+    .uplift-bg {
+        isolation: isolate;
+        position: relative;
+        overflow: hidden;
+        img:first-of-type {
+            z-index: -1;
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            transform: scaleX(3);
+            mix-blend-mode: multiply;
+        }
+        img:last-of-type {
+            margin: 0 auto;
+            padding-top: 25%;
+            width: 80%;
+            z-index: 1;
+            padding-bottom: 13%;
+        }
+    }
+    article:first-of-type {
+        text-align: center;
+        padding-left: 5%;
+        padding-right: 5%;
+        h2 {
+            padding-top: 10%;
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        p:first-of-type {
+            padding-top: 5%;
+        }
+        p:last-of-type {
+            padding-top: 5%;
+            padding-bottom: 10%;
+        }
+        div {
+            padding-bottom: 10%;
+            a {
+                border-bottom: 1px solid var(--accent-200);
+                position: relative;
+                color: var(--accent-200);
+                gap: 0.25rem;
+                padding-bottom: 0.25rem;
+                display: inline-flex;
+                span img{
+                    width: 1.5rem;
+                }
+            }
+
+            
+        }
+    }
+    article:last-of-type {
+        padding-bottom: 10%;
+        .quote-icon {
+            background-color: white;
+            width: 80%;
+            margin: 0 auto;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 10px 0px;
+            .quote-header{
+                img {
+                    width: 1rem;
+                }
+                p {
+                    padding-top: 0.5rem;
+                }
+            }
+            .quote-content {
+                @include flex(flex-start, center);
+                margin-top: 1rem;
+                img {
+                    border-radius: 50%;
+                    width: 10%;
+                    margin-right: 1rem;
+                }
+            }
+  
+        }
+        
+    }
+}
+
+
+
+
