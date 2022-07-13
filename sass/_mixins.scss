@@ -1,3 +1,4 @@
+
 @mixin flex($justify, $align) {
     display: flex;
     justify-content: $justify;
@@ -6,4 +7,10 @@
 
 @mixin grid() {
     display: grid;
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
 }

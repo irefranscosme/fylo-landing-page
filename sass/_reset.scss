@@ -55,7 +55,7 @@
   }
 
   input, button {
-    padding-block: 0.5rem;
+    padding-block: 0.8rem;
     border-radius: 0.25rem;
     display: block;
     width: 100%;
@@ -65,6 +65,7 @@
   input {
     border: 1px solid var(--primary-200);
   }
+  
   button {
     cursor: pointer;
   }
