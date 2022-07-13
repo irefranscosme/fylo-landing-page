@@ -53,3 +53,24 @@
     text-decoration: none;
     list-style: none;
   }
+
+  input, button {
+    padding-block: 0.5rem;
+    border-radius: 0.25rem;
+    display: block;
+    width: 100%;
+    border: none;
+  }
+
+  input {
+    border: 1px solid var(--primary-200);
+  }
+  button {
+    cursor: pointer;
+  }
+
+  ::placeholder {
+    font-size: calc(var(--fs-400) - 1px);
+    font-family: var(--ff-secondary);
+    color: var(--neutral-200);
+}
