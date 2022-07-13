@@ -48,14 +48,18 @@ body {
     @include flex(space-between, center);
     width: 100%;
     .nav-img {
-        flex-basis: 50%;
+        flex-basis: 40%;
         img {
             max-width: var(--fs-900);
         }
     }
     .nav-list {
-        flex-basis: 50%;
+        flex-basis: 60%;
         @include flex(space-between, center);
+
+        a {
+            color: var(--primary-400);
+        }
     }
 }
 
@@ -82,7 +86,7 @@ body {
     text-align: center;
     padding-left: 5%;
     padding-right: 5%;
-    padding-top: 5%;
+    padding-top: 3.5%;
     input,
     button {
         margin: 1rem auto;
