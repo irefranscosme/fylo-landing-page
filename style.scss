@@ -199,8 +199,11 @@ body {
         flex-direction: column;
         gap: 2rem;
         h2 {
-      
+            margin-top: 10%;
             text-align: center;
+            @include desktop {
+                margin-top: 0;
+            }
         }
         p {
             text-align: left;
