@@ -1,0 +1,44 @@
+@use './component' as *;
+
+@mixin grid {
+    display: grid;
+    grid-template-areas: 
+    'navigation'
+    'content'
+    'footer';
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+@mixin flex(
+    $x: flex-start, 
+    $y: stretch, 
+    $gap: 0, 
+    $direction: row, 
+    $child-size: auto
+) {
+    display: flex;
+    justify-content: $x;
+    align-items: $y;
+    gap: $gap;
+    flex-direction: $direction;
+    & > * {
+        flex-basis: $child-size;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (min-width:#{breakpoints(lg)}) {
+        @content;
+    }
+}
+
+@mixin block ($display: block){
+    display: $display;
+}
+
+@mixin btn-input($border, $margin: 0) {
+    border-radius: 5px;
+    padding: 0.8em 1.2em;
+    border: $border;
+    margin: $margin;
+}

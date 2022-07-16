@@ -1,0 +1,51 @@
+$primary: (
+    primary-400: hsl(243, 87%, 12%),
+    primary-200: hsl(238, 22%, 44%),
+);
+
+$accent: (
+    accent-400: hsl(224, 93%, 58%),
+    accent-200: hsl(170, 45%, 43%),
+);
+
+$neutral: (
+    neutral-400: hsl(0, 0%, 100%),
+    neutral-200: hsl(0, 0%, 75%),
+);
+
+$font-sizes: (
+    fs-900: 6rem,
+    fs-700: 2.5rem,
+    fs-600: 1.7rem,
+    fs-500: 1.2rem,
+    fs-400: 1rem,
+);
+
+$font-weights: (
+    fw-700: 700,
+    fw-400: 400
+);
+
+$breakpoints: (
+    sm: 768px,
+    lg: 920px
+);
+
+@function primary($primary-color){
+    @return map-get($map: $primary, $key: $primary-color)
+};
+@function accent($accent-color){
+    @return map-get($map: $accent, $key: $accent-color)
+};
+@function neutral($neutral-color){
+    @return map-get($map: $neutral, $key: $neutral-color)
+};
+@function font-size($font-size){
+    @return map-get($map: $font-sizes, $key: $font-size)
+};
+@function font-weight($font-weight){
+    @return map-get($map: $font-weights, $key: $font-weight)
+};
+@function breakpoints($break-points){
+    @return map-get($map: $breakpoints, $key: $break-points)
+};

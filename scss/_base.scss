@@ -1,0 +1,95 @@
+@use './layout' as *;
+@use './component' as *;
+
+// reset https://www.joshwcomeau.com/css/custom-css-reset/
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    width: 100%;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  li ,
+  a {
+    text-decoration: none;
+    list-style: none;
+  }
+
+  // variables
+$ff-primary: 'Raleway', sans-serif;
+$ff-secondary: 'Open Sans', sans-serif;
+ 
+
+// mixins 
+
+@mixin horizontal-list {  
+    li {
+      display: inline-block;
+      margin: {
+        left: -2px;
+        right: 2em;
+      }
+    }
+}
+
+//utilitiy classes
+  
+.ff-primary {font-family: #{$ff-primary};}
+.ff-secondary {font-family: #{$ff-secondary};}
+
+.fw-regular {font-weight: #{font-weight(fw-400)};}
+.fw-bold {font-weight: #{font-weight(fw-700)};}
+
+.container {
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.btn--primary {
+  font-size: 1rem;
+  background-color: #{accent(accent-400)};
+  color: white;
+}
